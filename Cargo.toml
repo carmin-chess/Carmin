@@ -1,0 +1,25 @@
+[package]
+name = "carmin"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+flate2 = "1.1.9"
+wide = "1.6.1"
+rand = "0.8"
+
+[features]
+disable_tt = []
+
+[profile.dev]
+opt-level = 1           # Compilação rápida para testes simples
+incremental = true      # Garante re-compilação apenas do que mudou
+
+[profile.release]
+opt-level = 3
+lto = "fat"             # LTO completo para otimização cross-crate máxima
+codegen-units = 1       # Permite otimização global do LLVM (compila mais lento, roda mais rápido)
+panic = "abort"
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
