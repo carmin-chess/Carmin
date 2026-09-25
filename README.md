@@ -6,7 +6,7 @@
 
 ## Evaluation
 
-Carmin uses a hand-crafted evaluation (HCE), tuned with Texel-style methods.
+Carmin uses a hand-crafted evaluation (HCE).
 
 The evaluation scores a position from the side to move by combining several terms:
 
@@ -19,7 +19,7 @@ The evaluation scores a position from the side to move by combining several term
 - **Space & initiative** — control of the board and who is dictating the play
 - **Endgame knowledge** — special cases and fortress detection when little material remains
 
-A **personality** system can scale these terms (and contempt) so the engine plays more aggressively, defensively, positionally, etc., without rewriting the evaluation.
+A **personality**(beta) system can scale these terms (and contempt) so the engine plays more aggressively, defensively, positionally, etc., without rewriting the evaluation.
 
 Static evaluation is also refined by a **correction history** table that learns small adjustments from search outcomes.
 
